@@ -3,7 +3,8 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>PDF Studio</title>
+	<title>SagilityEditor</title>
+	<meta http-equiv="refresh" content="0; url=Admin.html">
 	<style>
 		:root{--ink:#17202a;--muted:#68727d;--line:#dce1e5;--accent:#164a72;--wash:#f3f5f6}
 		*{box-sizing:border-box}body{margin:0;background:var(--wash);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,sans-serif}
@@ -31,12 +32,12 @@
 	</style>
 </head>
 <body>
-	<section id="loginScreen"><div id="loginCard"><img id="loginLogo" src="logo.png" alt="Sagility"><h1>PDF EDITOR</h1><div class="role-choice" aria-label="Select user role"><button type="button" id="adminChoice">Admin</button><button type="button" id="userChoice">User</button></div><div id="loginError" role="alert"></div><div>Created by Richiel Caña</div></div></section>
+	<script>window.location.replace('Admin.html');</script>
 	<header><div class="brand">PDF<span>Sagility</span><small>Created by Richiel Caña</small></div><div class="file-name" id="fileName">No PDF selected</div><div class="signature-menu" id="signatureMenu" hidden></div><button type="button" id="newPdfBtn">New PDF File</button><button type="button" id="newFormBtn" disabled>New Fill Form</button><button class="primary" id="exportBtn" disabled>Apply changes &amp; download</button></header>
 	<div class="layout"><main><div class="toolbar"><button class="tool" id="signTool" disabled>Sign</button><button class="tool" id="newSignTool" disabled>Add New Sign</button><button class="tool" id="addTextTool" disabled>Add Text</button><div class="zoom-controls"><button type="button" id="zoomOut" title="Zoom out">-</button><span class="zoom-level" id="zoomLevel">100%</span><button type="button" id="zoomIn" title="Zoom in">+</button><button type="button" id="zoomFit">Fit</button></div><span class="hint" id="status">Upload a PDF to begin</span></div><section class="stage"><div class="dropzone" id="dropzone"><div><strong>Upload a PDF to begin</strong><label class="upload upload-center">Upload PDF File<input type="file" id="uploadInput" accept="application/pdf"></label><span id="loadMessage"></span></div></div><div class="pages" id="pages"></div></section></main></div>
 	<dialog id="signatureDialog"><h2>Draw your signature</h2><canvas id="signaturePad" width="1600" height="640"></canvas><label class="upload signature-upload">Upload signature image<input type="file" id="signatureUpload" accept="image/png,image/jpeg,image/webp"></label><div><button type="button" id="clearSignature">Clear</button><button type="button" id="cancelSignature">Cancel</button><button type="button" class="primary" id="saveSignature">Save signature</button></div></dialog>
 	<dialog id="filenameDialog"><form method="dialog" class="filename-form" id="filenameForm"><h2>Save PDF file</h2><label for="filenameInput">File name</label><input id="filenameInput" type="text" required><div class="filename-actions"><button type="button" id="cancelFilename">Cancel</button><button type="submit" class="primary">Save</button></div></form></dialog>
-	<script type="module">
+	<script type="text/plain">
 		import * as pdfjsLib from 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.min.mjs';
 		pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf.worker.min.mjs';
 		const {PDFDocument,rgb}=await import('https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/+esm');
