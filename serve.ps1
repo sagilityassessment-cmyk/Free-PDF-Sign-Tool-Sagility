@@ -15,6 +15,7 @@ try {
             $context.Response.ContentType = switch ([IO.Path]::GetExtension($file).ToLowerInvariant()) {
                 '.html' { 'text/html; charset=utf-8'; break }
                 '.png' { 'image/png'; break }
+                '.mjs' { 'text/javascript; charset=utf-8'; break }
                 default { 'application/octet-stream' }
             }
             $context.Response.StatusCode = 200
