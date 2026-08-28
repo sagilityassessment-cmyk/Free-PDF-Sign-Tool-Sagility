@@ -41,7 +41,7 @@ function doPost(e) {
 
     MailApp.sendEmail({
       to: email,
-      subject: 'Sagility eSign Forms',
+      subject: 'Sagility eSign Forms_ ' + name,
       body: body,
       attachments: [attachment]
     });
